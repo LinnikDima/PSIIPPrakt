@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Натяжные потолки - ГЕНВИК</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Блок 1: Хедер -->
+<header class="bg-white head mt-3 mb-3 p-2 shadow-sm">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light px-0">
+            <!-- Логотип -->
+            <a class="navbar-brand me-3" href="#">
+                <img class="logo" src="images/logo.png" alt="Генвик" style="height: 48px;">
+            </a>
+
+            <!-- Бургер-кнопка -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Меню и контакты -->
+            <div class="collapse navbar-collapse justify-content-between mt-3 mt-lg-0" id="mainNavbar">
+                <!-- Меню -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex flex-lg-row align-items-lg-center text-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#catalog">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#cost">Цены</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Наши работы</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#company">О компании</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Офисы продаж</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#payModal">Оплатить заказ</a></li>
+
+                </ul>
+
+                <!-- Контакты -->
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-end mt-3 mt-lg-0 sots">
+                    <a href="#" class="me-2 sots-hover">
+                        <img src="images/whatsapp.png" alt="WhatsApp" style="height: 24px;">
+                    </a>
+                    <a href="#" class="me-3 sots-hover">
+                        <img src="images/telegram.png" alt="Telegram" style="height: 24px;">
+                    </a>
+                    <a href="tel:+78001234567" class="btn btn-outline-primary sots-hover">+7 (800) 123-45-67</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="marquee-container py-2">
+    <div class="marquee-text">
+        📣 Бесплатная доставка при заказе от 3000 ₽! | Промокод: WELCOME10 | Только сегодня — скидка 15% на все услуги!
+    </div>
+</div>
+
+<!-- Слайдер -->
+<div class="container-fluid px-0">
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/baner1.png" class="d-block w-100 img-fluid carousel-img" alt="Баннер 1">
+            </div>
+            <div class="carousel-item">
+                <img src="images/baner1.png" class="d-block w-100 img-fluid carousel-img" alt="Баннер 2">
+            </div>
+            <div class="carousel-item">
+                <img src="images/baner1.png" class="d-block w-100 img-fluid carousel-img" alt="Баннер 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+
+<section class="py-4">
+    <div class="container">
+        <div class="row gx-4 gy-3 justify-content-center align-items-stretch">
+            <div class="col-6 col-md-3 text-center d-flex">
+                <a href="#" class="btn w-100 py-2 d-flex align-items-center justify-content-center">Страховка в подарок</a>
+            </div>
+            <div class="col-6 col-md-3 text-center d-flex">
+                <a href="#" class="btn w-100 py-2 d-flex align-items-center justify-content-center">Щедрые скидки</a>
+            </div>
+            <div class="col-6 col-md-3 text-center d-flex">
+                <a href="#" class="btn w-100 py-2 d-flex align-items-center justify-content-center">Гарантия низкой цены</a>
+            </div>
+            <div class="col-6 col-md-3 text-center d-flex">
+                <a href="#" class="btn w-100 py-2 d-flex align-items-center justify-content-center">Рассрочка 0%</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок 3: Рейтинги -->
+<section class="py-4 py-lg-5">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <!-- Яндекс блок -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                <div class="bg-white rounded-3 p-4 h-100 d-flex align-items-center justify-content-center shadow-sm min-height-150">
+                    <div class="d-flex align-items-center flex-wrap justify-content-center gap-2">
+                        <img src="images/ylogo.png" alt="Яндекс" class="img-fluid logo-img">
+                        <img src="images/yandex.png" alt="Яндекс" class="img-fluid logo-img">
+                        <img src="images/star.png" alt="Рейтинг" class="img-fluid icon-img">
+                        <span class="fs-5 fw-bold">4.9</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Яндекс.Маркет блок -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                <div class="bg-white rounded-3 p-4 h-100 d-flex align-items-center justify-content-center shadow-sm min-height-150">
+                    <div class="d-flex align-items-center flex-wrap justify-content-center gap-2">
+                        <img src="images/ylogo.png" alt="Яндекс" class="img-fluid logo-img">
+                        <img src="images/market.png" alt="Маркет" class="img-fluid logo-img">
+                        <img src="images/tmark.png" alt="Товарный знак" class="img-fluid logo-img">
+                        <img src="images/star.png" alt="Рейтинг" class="img-fluid icon-img">
+                        <span class="fs-5 fw-bold">4.8</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ozon блок -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                <div class="bg-white rounded-3 p-4 h-100 d-flex align-items-center justify-content-center shadow-sm min-height-150">
+                    <div class="d-flex align-items-center flex-wrap justify-content-center gap-2">
+                        <img src="images/ozon.png" alt="Ozon" class="img-fluid ozon-img">
+                        <img src="images/star.png" alt="Рейтинг" class="img-fluid icon-img">
+                        <span class="fs-5 fw-bold">4.9</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Блок 4: Категории потолков -->
+<section id="catalog" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Выберите свой натяжной потолок</h2>
+        <div class="row g-4">
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4 position-relative">
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-2">Хит продаж</span>
+                    <img src="images/potolok1.png" class="card-img-top" alt="Матовые потолки">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Матовые натяжные потолки</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">490 руб/м²</p>
+                        <div class="mt-auto">
+                            <button class="btn btn-gradient w-100" data-bs-toggle="modal" data-bs-target="#popupModal">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4 position-relative">
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-2">Хит продаж</span>
+                    <img src="images/potolok2.png" class="card-img-top" alt="Глянцевые потолки">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Глянцевые натяжные потолки</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">590 руб/м²</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4">
+                    <img src="images/potolok3.png" class="card-img-top" alt="С подсветкой">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Натяжные потолки с подсветкой</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">790 руб/м²</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4 position-relative">
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-2">Суперцена</span>
+                    <img src="images/potolok4.png" class="card-img-top" alt="Для зала">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Натяжные потолки для зала</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">690 руб/м²</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4">
+                    <img src="images/potolok5.png" class="card-img-top" alt="Дизайн проект">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Дизайн проект натяжного потолка</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">890 руб/м²</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4 position-relative">
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-2">Новинка</span>
+                    <img src="images/potolok6.png" class="card-img-top" alt="Парящие потолки">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Парящие натяжные потолки</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">1100 руб/м²</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4 position-relative">
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-2">Суперцена</span>
+                    <img src="images/potolok7.png" class="card-img-top" alt="Многоуровневые потолки">
+                    <div class="card-body d-flex flex-column text-center">
+                        <h5 class="card-title">Многоуровневые натяжные потолки</h5>
+                        <p class="text-muted text-decoration-line-through">980 руб/м²</p>
+                        <p class="fw-bold fs-5 text-primary">1290 руб/м²</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 d-flex flex-column justify-content-between shadow-sm rounded-4 text-center">
+                    <img src="images/reshenie.png" class="card-img-top w-50 mx-auto d-block mt-4" alt="Каталог решений">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Каталог всех решений</h5>
+                        <p class="card-text">Скачайте полный каталог<br> популярных решений 2023 года</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-gradient w-100">Скачать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Блок 5: Калькулятор стоимости (заглушка) -->
+<section id="cost" class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-2">Калькулятор стоимости</h2>
+        <p class="text-muted mb-4">Быстро и точно рассчитайте стоимость натяжного потолка по акции</p>
+
+        <div class="calculator p-4 rounded-4 bg-white shadow-sm mx-auto">
+            <form class="row g-3 justify-content-center align-items-start">
+
+                <!-- Помещение -->
+                <div class="col-md-2 col-sm-6">
+                    <label class="form-label d-flex align-items-center gap-2">
+                        <i class="bi bi-house-door text-primary"></i> Помещение
+                    </label>
+                    <select class="form-select">
+                        <option>Прихожая</option>
+                        <option>Гостиная</option>
+                        <option>Кухня</option>
+                    </select>
+                </div>
+
+                <!-- Площадь -->
+                <div class="col-md-3 col-sm-6">
+                    <label class="form-label d-flex align-items-center gap-2">
+                        <i class="bi bi-aspect-ratio text-primary"></i> Площадь
+                    </label>
+                    <div class="input-group mb-2">
+                        <input type="number" class="form-control" id="areaInput" value="125" min="1" max="1000">
+                        <span class="input-group-text">м²</span>
+                    </div>
+                    <input type="range" class="form-range" id="areaRange" min="1" max="1000" value="125">
+                </div>
+
+                <!-- Фактура -->
+                <div class="col-md-2 col-sm-6">
+                    <label class="form-label d-flex align-items-center gap-2">
+                        <i class="bi bi-layers text-primary"></i> Фактура
+                    </label>
+                    <select class="form-select">
+                        <option>Матовая</option>
+                        <option>Глянцевая</option>
+                        <option>Сатиновая</option>
+                    </select>
+                </div>
+
+                <!-- Цвет -->
+                <div class="col-md-3 col-sm-6">
+                    <label class="form-label d-flex align-items-center gap-2">
+                        <i class="bi bi-droplet-half text-primary"></i> Цвет
+                    </label>
+                    <div class="btn-group w-100" role="group">
+                        <input type="radio" class="btn-check" name="color" id="white" checked>
+                        <label class="btn btn-outline-primary" for="white">Белый</label>
+
+                        <input type="radio" class="btn-check" name="color" id="colorful">
+                        <label class="btn btn-primary" for="colorful">Цветной</label>
+                    </div>
+                </div>
+
+                <!-- Кнопка -->
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Рассчитать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Блок 6: Логотип компании -->
+<section id="company" class="text-center py-5 company-section">
+    <div class="container">
+        <h2>О компании</h2>
+        <!-- Картинка с текстом "ГЕНВИК" -->
+        <img src="images/genvik.png" alt="ГЕНВИК" class="img-fluid mb-3 genvik-img">
+
+
+        <!-- Подзаголовок -->
+        <p class="lead mb-5">
+            Федеральная компания №1 на рынке натяжных потолков и интерьерного освещения. Работаем с 2008 года
+        </p>
+
+        <!-- Карточки -->
+        <div class="row g-4">
+            <!-- Производство -->
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 text-white card-bg card-production d-flex flex-column justify-content-end p-4 rounded-4">
+                    <h5 class="fw-bold fs-4 mb-0">2 собственных производства</h5>
+                </div>
+            </div>
+
+            <!-- Офисы -->
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 text-white card-bg card-offices d-flex flex-column justify-content-center text-center p-4 rounded-4">
+                    <h5 class="fw-bold fs-2">19 офисов по всей России</h5>
+                    <p class="mt-3 small">
+                        Мобильные и стационарные точки продаж в вашем городе с заботливым персоналом и многообразным ассортиментом
+                    </p>
+                </div>
+            </div>
+
+            <!-- Учебный центр -->
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 text-white card-bg card-training d-flex flex-column justify-content-end p-4 rounded-4">
+                    <h5 class="fw-bold fs-4 mb-0">Современный учебный центр</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container text-center">
+
+        <!-- Логотип сверху (если нужен) -->
+        <img src="images/ecofole.png" alt="ГЕНВИК" class="img-fluid mb-4">
+
+        <!-- Кнопка-капсула -->
+        <a href="#" class="btn green-pill mb-4 d-inline-block text-white fw-semibold">
+            <!-- текст можно добавить сюда, если нужно -->
+        </a>
+
+        <!-- Ссылки снизу -->
+        <div class="row justify-content-center gx-5">
+            <div class="col-auto d-flex align-items-center">
+                <img src="images/cert-icon.png" alt="cert icon" width="20" class="me-2">
+                <a href="#" class="text-dark fw-medium text-decoration-none sots-hover">
+                    посмотреть сертификаты соответствия
+                </a>
+            </div>
+            <div class="col-auto d-flex align-items-center">
+                <img src="images/site-icon.png" alt="site icon" width="20" class="me-2">
+                <a href="#" class="text-dark fw-medium text-decoration-none sots-hover">
+                    перейти на сайт производителя
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Блок 8: Инфо о бренде -->
+<section class="text-center py-5 company-section">
+    <div class="container">
+        <h2>Профессиональный и чистый монтаж</h2>
+        <p class="lead mb-5">
+            Мы бережно относимся к вашему имуществу, а гражданская ответственность ГЕНВИК застрахована <b>на 30 млн. рублей.</b>
+        </p>
+
+        <div class="row g-4">
+            <!-- Производство -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 card-bg card-mont1 d-flex flex-column justify-content-end p-0 rounded-4 overflow-hidden">
+                    <div class="card-content text-white p-4 text-start">
+                        <h5 class="fw-bold fs-4 mb-1">Квалифицированные бригады</h5>
+                        <p class="mb-0">2 собственных производства</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Офисы -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 card-bg card-mont2 d-flex flex-column justify-content-end p-0 rounded-4 overflow-hidden">
+                    <div class="card-content text-white p-4 text-start">
+                        <h5 class="fw-bold fs-4 mb-1">Профессиональный инструмент</h5>
+                        <p class="mb-0 small">Используем качественные комплектующие и взрывобезопасные баллоны</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Учебный центр -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 card-bg card-mont3 d-flex flex-column justify-content-end p-0 rounded-4 overflow-hidden">
+                    <div class="card-content text-white p-4 text-start">
+                        <h5 class="fw-bold fs-4 mb-0">Допуски к работе</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ГОСТ -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 card-bg card-mont4 d-flex flex-column justify-content-end p-0 rounded-4 overflow-hidden">
+                    <div class="card-content text-white p-4 text-start">
+                        <h5 class="fw-bold fs-4 mb-0">Монтаж по ГОСТ</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="video-wrapper position-relative rounded-4 overflow-hidden">
+                <video class="video-player w-100 rounded-4" controls poster="images/video-poster.png" preload="metadata">
+                    <source src="media/advantages-video.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Блок 12: Руководитель -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center text-center text-lg-start">
+            <!-- Фото: сначала на мобильных, слева только на >= lg -->
+            <div class="col-lg-5 order-1 order-lg-0 mb-4 mb-lg-0">
+                <img src="images/viktor.png" alt="Нестеренок Виктор" class="img-fluid rounded-circle" style="max-width: 280px;">
+            </div>
+
+            <!-- Текст: сначала, но на lg уходит вправо -->
+            <div class="col-lg-7 order-0 order-lg-1">
+                <p class="fs-5">
+                    Наша компания долгие годы остается лидером на рынке за счёт
+                    <span class="fw-bold">особого подхода</span> к работе.
+                    С момента основания вся команда <span class="fw-bold">ГЕНВИК</span>
+                    придерживается ценностей компании.
+                </p>
+
+                <ul class="list-unstyled ps-0">
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-check2-circle me-2 text-primary mt-1"></i>
+                        <span>В наших интересах всегда было не навязывать клиенту выбор, а предоставить все необходимые данные для его объективного решения.</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-check2-circle me-2 text-primary mt-1"></i>
+                        <span>Я принимаю участие во всех процессах компании и лично слежу за качеством проводимых работ. Всегда открыт к обратной связи для любого из клиентов.</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <i class="bi bi-check2-circle me-2 text-primary mt-1"></i>
+                        <span>Если у вас есть вопросы, вы можете связаться со мной лично:
+              <br>
+              <a href="#" class="link-whatsapp d-inline-flex align-items-center mt-1 text-decoration-none">
+                <i class="bi bi-whatsapp me-1 text-success"></i> связаться в WhatsApp
+              </a>
+            </span>
+                    </li>
+                </ul>
+
+                <p class="fw-semibold fs-5 mt-4 mb-1">Спасибо за доверие!</p>
+                <p class="fw-bold">Нестеренок Виктор</p>
+                <p class="text-muted mb-0">Генеральный директор ГЕНВИК</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок 13: Карта -->
+<section id="offices" class="py-5 position-relative overflow-hidden">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">Офисы продаж</h2>
+    </div>
+
+    <div class="fullwidth-map-wrapper position-relative">
+        <div id="map" class="rounded shadow"></div>
+
+        <div class="contact-bar text-white text-center py-3 px-2">
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 container">
+                <span>Сделайте заказ по телефону или в мессенджере:</span>
+                <span class="fw-bold">+7 812 426–1340</span>
+                <div class="ms-md-3">
+                    <img src="images/whatsapp.png" alt="WhatsApp" class="me-2" width="20">
+                    <img src="images/telegram.png" alt="Telegram" class="me-2" width="20">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promotions-section py-5">
+    <div class="container">
+
+        <!-- Заголовок -->
+        <h2 class="text-center fw-bold mb-4">Условия проведения акций</h2>
+
+        <!-- Блок с правилами -->
+        <div class="rules-box p-4 mb-5">
+            <div class="d-flex align-items-start mb-3">
+                <div class="me-3">
+                    <i class="bi bi-info-circle-fill text-primary fs-3"></i>
+                </div>
+                <div>
+                    <p class="fw-bold mb-2">
+                        Настоящие Правила регламентируют порядок организации и проведения стимулирующих рекламных Акций
+                    </p>
+                    <ol class="ps-3 mb-0 small">
+                        <li>Территория проведения Акций – Российская Федерация, если иное не оговорено в правилах конкретной Акции.</li>
+                        <li>Организатором Акций является ООО «Ваша лаборатория», ОГРН 1127746021765, ИНН 7715899727, КПП 771501001, юридический адрес: 127106, г. Москва, Гостиничный проезд д.4А, стр.1.</li>
+                        <li>Информация о Соорганизаторах, Партнёрах, площадках проведения Акций указывается в правилах конкретной Акции.</li>
+                        <li>Цель проведения Акции указывается в правилах конкретной Акции.</li>
+                        <li>Акция не является лотереей либо иной игрой, основанной на риске...</li>
+                        <li>Участие в Акции является добровольным и означает согласие с настоящими Правилами.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Подзаголовок и описание -->
+        <div class="mb-4">
+            <p>
+                Огромное разнообразие цветовых решений и возможность создания уникальных многоуровневых конструкций — всё это воплощают в себе наши натяжные потолки.
+            </p>
+            <p>
+                Желаете купить действительно долговечные и оригинальные варианты оформления интерьера? Натяжные потолки от
+                <span class="fw-bold">ГЕНВИК</span> созданы именно для вас!
+            </p>
+        </div>
+
+        <!-- Список с галочками -->
+        <ul class="list-unstyled">
+            <li class="d-flex mb-2">
+                <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
+                <span>Минимальное количество пыли и строительного мусора;</span>
+            </li>
+            <li class="d-flex mb-2">
+                <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
+                <span>Помещение защищено от протечек воды сверху: натяжной потолок удерживает до 100–200 л воды на м²...</span>
+            </li>
+            <li class="d-flex mb-2">
+                <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
+                <span>Высокая степень пожаробезопасности;</span>
+            </li>
+            <li class="d-flex mb-2">
+                <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
+                <span>Большой выбор дизайнерских решений (многообразие фактур, цветов...);</span>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<footer class="bg-light py-4 m-3">
+    <div class="container">
+        <div class="row gy-3 align-items-center justify-content-between">
+            <!-- Левая часть -->
+            <div class="col-12 col-md-4 text-center text-md-start">
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                    <img src="images/logo.png" alt="Логотип" width="24" class="me-2">
+                    <span class="fw-semibold">2008 &nbsp;–&nbsp; 2024</span>
+                </div>
+                <small class="d-block">© ГЕНВИК — Натяжные потолки в Санкт-Петербурге</small>
+                <small class="d-block text-muted">Дизайн — Прусков Вадим</small>
+            </div>
+
+            <!-- Центр -->
+            <div class="col-12 col-md-4 text-center">
+                <a href="https://www.instagram.com/" class="me-2">
+                    <img src="images/instagram.png" alt="Instagram" width="20" class="sots-hover">
+                </a>
+                <a href="https://www.vk.com/" class="me-2">
+                    <img src="images/vk.png" alt="VK" width="20" class="sots-hover">
+                </a>
+                <a href="https://www.youtube.com/" class="me-2">
+                    <img src="images/youtube.png" alt="YouTube" width="20" class="sots-hover">
+                </a>
+            </div>
+
+            <!-- Правая часть -->
+            <div class="col-12 col-md-4 text-center text-md-end">
+                <div class="mb-2 d-flex justify-content-center justify-content-md-end align-items-center">
+                    <img src="images/whatsapp.png" alt="WhatsApp" width="18" class="me-2 sots-hover">
+                    <img src="images/telegram.png" alt="Telegram" width="18" class="me-2 sots-hover">
+                    <span class="fw-bold">+7 (812) 389–43–54</span>
+                </div>
+                <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-1 sots-hover">Связаться</a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="popupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 rounded-4 overflow-hidden">
+            <div class="row g-0">
+
+                <!-- Левая часть — изображение -->
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="images/potolok1.png" alt="Потолок" class="img-fluid h-100 w-100 object-fit-cover">
+                </div>
+
+                <!-- Правая часть — текст + форма -->
+                <div class="col-md-6 p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h5 class="fw-bold mb-0">Матовые натяжные потолки</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+
+                    <div class="mb-1 text-muted small">980 руб/м²</div>
+                    <div class="fw-bold text-primary fs-4 mb-3">490 руб/м²</div>
+                    <p class="mb-3">Чтобы сделать заказ на натяжной потолок, заполните форму ниже:</p>
+
+                    <form>
+                        <div class="mb-2">
+                            <input type="text" class="form-control form-control-lg rounded-3" placeholder="Имя" required>
+                        </div>
+                        <div class="mb-2">
+                            <input type="tel" class="form-control form-control-lg rounded-3" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-3">ОТПРАВИТЬ</button>
+
+                        <div class="form-check mt-3 text-start">
+                            <input class="form-check-input" type="checkbox" id="agree" required>
+                            <label class="form-check-label small" for="agree">
+                                Даю согласие на обработку <a href="#" class="text-primary text-decoration-underline">персональных данных</a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Кнопка в меню -->
+<li class="nav-item">
+    <a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#payModal">Оплатить заказ</a>
+</li>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="payModal" tabindex="-1" aria-labelledby="payModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title mx-auto fw-bold modal-title-custom" id="payModalLabel">Оплатить заказ</h5>
+                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-center mb-4 text-secondary modal-subtitle">
+                    Введите свои данные для перехода к оплате заказа
+                </p>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control rounded-3" placeholder="Имя" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control rounded-3" placeholder="Телефон" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control rounded-3" placeholder="Номер заказа" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="dataAgree" required>
+                        <label class="form-check-label small" for="dataAgree">
+                            Я согласен на обработку <a href="#" target="_blank" class="personal-link">персональных данных</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn w-100 custom-submit-btn">
+                        ПЕРЕЙТИ К ОПЛАТЕ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button id="scrollToTopBtn" class="scroll-to-top" title="Наверх">
+    ↑
+</button>
+
+<div class="modal fade" id="entryPromoModal" tabindex="-1" aria-labelledby="entryPromoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header border-0">
+                <h5 class="modal-title w-100" id="entryPromoLabel">🎉 Добро пожаловать!</h5>
+                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Только сегодня: получите бонус 500 ₽ при первом заказе!</p>
+            </div>
+            <div class="modal-footer justify-content-center border-0">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Понятно</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
